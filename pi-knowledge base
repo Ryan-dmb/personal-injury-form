@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Injury Pre-Qualification Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 30px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Personal Injury Pre-Qualification</h2>
+    <form id="prequal-form">
+      <div class="question">
+        <label>1. When did the injury occur?</label>
+        <input type="text" name="q1" required />
+      </div>
+      <div class="question">
+        <label>2. Where did the incident happen?</label>
+        <input type="text" name="q2" required />
+      </div>
+      <div class="question">
+        <label>3. How did the injury occur?</label>
+        <textarea name="q3" required></textarea>
+      </div>
+      <div class="question">
+        <label>4. What type of injuries did you sustain?</label>
+        <textarea name="q4" required></textarea>
+      </div>
+      <div class="question">
+        <label>5. Did you seek medical attention after the incident?</label>
+        <input type="text" name="q5" required />
+      </div>
+      <div class="question">
+        <label>6. Have you spoken to or been contacted by any insurance companies?</label>
+        <input type="text" name="q6" required />
+      </div>
+      <div class="question">
+        <label>7. Was a police report or incident report filed?</label>
+        <input type="text" name="q7" required />
+      </div>
+      <div class="question">
+        <label>8. Do you have any photos, videos, or witness contact information?</label>
+        <input type="text" name="q8" required />
+      </div>
+      <div class="question">
+        <label>9. Were you partially at fault for the accident?</label>
+        <input type="text" name="q9" required />
+      </div>
+      <div class="question">
+        <label>10. Have you previously filed a personal injury claim or hired an attorney for this incident?</label>
+        <input type="text" name="q10" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("prequal-form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const answers = Object.fromEntries(formData.entries());
+      console.log("Submitted Answers:", answers);
+      alert("Thank you. Your answers have been submitted for review.");
+    });
+  </script>
+</body>
+</html>
